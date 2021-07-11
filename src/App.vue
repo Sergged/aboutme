@@ -1,29 +1,33 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="service-panel">
+    <button>Download PDF</button>
   </div>
-  <router-view />
+  <router-view></router-view>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+@import "src/styles/helpers";
 
-#nav {
-  padding: 30px;
+.service-panel {
+  display: flex;
+  justify-content: flex-end;
+  background-color: darken($SECONDARY_COLOR, 20);
+  padding: 1% 3%;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  button {
+    background-color: $PRIMARY_COLOR;
+    color: $SECONDARY_COLOR;
+    border: none;
+    border-left: solid $ACCENT_COLOR 5px;
+    padding: 1% 3%;
+    transition: all 1s;
 
-    &.router-link-exact-active {
-      color: #42b983;
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      transform: scale(0.1);
     }
   }
 }
